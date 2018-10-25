@@ -22,9 +22,17 @@ public class SimpleStackImpl implements SimpleStack {
     public boolean isEmpty() {
         return size == 0;
     }
+
     public int getSize() {
         return size;
     }
+
+    public void push(Item ... items) {
+        for (Item i : items) {
+            push(i);
+        }
+    }
+
     public void push(Item item) {
         if (size == stack.length) {
             Item[] newStack = new Item[(int)(size * 1.5)];
