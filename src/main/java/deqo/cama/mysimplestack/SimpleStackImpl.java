@@ -59,6 +59,6 @@ public class SimpleStackImpl implements SimpleStack {
         for (int i = getSize() - 1 ; i >= 0 ; i -- ) {
             sb.append(stack[i].getValue().toString() + "-");
         }
-        return sb.toString();
+        return sb.substring(0, sb.length() - 1);
     }
 }
