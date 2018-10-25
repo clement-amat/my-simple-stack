@@ -61,4 +61,14 @@ public class SimpleStackImpl implements SimpleStack {
         }
         return sb.substring(0, sb.length() - 1);
     }
+
+    @Override
+    public int hashCode() {
+        int hash = size;
+        for (int i = 0 ; i < size ; i++) {
+            hash += i + stack[i].hashCode();
+        }
+
+        return hash;
+    }
 }
