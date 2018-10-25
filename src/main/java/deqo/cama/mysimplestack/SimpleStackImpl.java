@@ -26,6 +26,13 @@ public class SimpleStackImpl implements SimpleStack {
         return size;
     }
     public void push(Item item) {
+        if (size == stack.length) {
+            Item[] newStack = new Item[(int)(size * 1.5)];
+            for (int i = 0 ; i < size ; i ++) {
+                newStack[i] = stack[i];
+            }
+            stack = newStack;
+        }
         stack[size++] = item;
 
     }
